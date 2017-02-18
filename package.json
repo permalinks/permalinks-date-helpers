@@ -2,11 +2,11 @@
   "name": "permalinks-date-helpers",
   "description": "Plugin for Permalinks that adds date helpers and variables to the context.",
   "version": "0.1.0",
-  "homepage": "https://github.com/jonschlinkert/permalinks-date-helpers",
+  "homepage": "https://github.com/permalinks/permalinks-date-helpers",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-  "repository": "jonschlinkert/permalinks-date-helpers",
+  "repository": "permalinks/permalinks-date-helpers",
   "bugs": {
-    "url": "https://github.com/jonschlinkert/permalinks-date-helpers/issues"
+    "url": "https://github.com/permalinks/permalinks-date-helpers/issues"
   },
   "license": "MIT",
   "files": [
@@ -24,6 +24,12 @@
     "to-regex-range": "^1.0.2",
     "year": "^0.2.1"
   },
+  "devDependencies": {
+    "gulp-format-md": "^0.1.11",
+    "mocha": "^3.2.0",
+    "permalinks": "^1.0.3",
+    "vinyl": "^2.0.1"
+  },
   "keywords": [
     "date",
     "helpers",
@@ -39,14 +45,15 @@
     "plugins": [
       "gulp-format-md"
     ],
+    "related": {
+      "list": [
+        "static-rewrite",
+        "gulp-permalinks",
+        "permalinks"
+      ]
+    },
     "lint": {
       "reflinks": true
     }
-  },
-  "devDependencies": {
-    "gulp-format-md": "^0.1.11",
-    "mocha": "^3.2.0",
-    "permalinks": "^1.0.3",
-    "vinyl": "^2.0.1"
   }
 }

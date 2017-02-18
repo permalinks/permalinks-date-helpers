@@ -1,4 +1,4 @@
-# permalinks-date-helpers [![NPM version](https://img.shields.io/npm/v/permalinks-date-helpers.svg?style=flat)](https://www.npmjs.com/package/permalinks-date-helpers) [![NPM monthly downloads](https://img.shields.io/npm/dm/permalinks-date-helpers.svg?style=flat)](https://npmjs.org/package/permalinks-date-helpers)  [![NPM total downloads](https://img.shields.io/npm/dt/permalinks-date-helpers.svg?style=flat)](https://npmjs.org/package/permalinks-date-helpers) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/permalinks-date-helpers.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/permalinks-date-helpers)
+# permalinks-date-helpers [![NPM version](https://img.shields.io/npm/v/permalinks-date-helpers.svg?style=flat)](https://www.npmjs.com/package/permalinks-date-helpers) [![NPM monthly downloads](https://img.shields.io/npm/dm/permalinks-date-helpers.svg?style=flat)](https://npmjs.org/package/permalinks-date-helpers)  [![NPM total downloads](https://img.shields.io/npm/dt/permalinks-date-helpers.svg?style=flat)](https://npmjs.org/package/permalinks-date-helpers) [![Linux Build Status](https://img.shields.io/travis/permalinks/permalinks-date-helpers.svg?style=flat&label=Travis)](https://travis-ci.org/permalinks/permalinks-date-helpers)
 
 > Plugin for Permalinks that adds date helpers and variables to the context.
 
@@ -14,6 +14,16 @@ $ npm install --save permalinks-date-helpers
 
 ```js
 var dateHelpers = require('permalinks-date-helpers');
+var Permalinks = require('permalinks');
+var permalinks = new Permalinks();
+
+permalinks.use(dateHelpers());
+var file = {path: 'posts/about.md', data: {date: '2017-02-02'}};
+permalinks.format(':year/:month/:day/:stem/index.html');
+//=> '2017/02/02/about/index.html'
+
+permalinks.format(':date("YYYY/MM/DD")/:stem/index.html');
+//=> '2017/02/02/about/index.html'
 ```
 
 ## Helpers
@@ -64,6 +74,12 @@ In addition to the [date](#date) helper, the following variables will be exposed
 `:second` | Second of the minute | `45`
 
 ## About
+
+### Related projects
+
+* [gulp-permalinks](https://www.npmjs.com/package/gulp-permalinks): Gulp plugin for easily creating permalinks for vinyl files. | [homepage](https://github.com/doowb/gulp-permalinks "Gulp plugin for easily creating permalinks for vinyl files.")
+* [permalinks](https://www.npmjs.com/package/permalinks): Adds permalink or URL routing/URL rewriting logic to any node.js project. Can be used in… [more](https://github.com/jonschlinkert/permalinks) | [homepage](https://github.com/jonschlinkert/permalinks "Adds permalink or URL routing/URL rewriting logic to any node.js project. Can be used in static site generators, build systems, web applications or anywhere you need to do path transformation or prop-string replacements.")
+* [static-rewrite](https://www.npmjs.com/package/static-rewrite): Easily generate destination paths or static URLs by mapping user-friendly patterns to server-side build paths. | [homepage](https://github.com/jonschlinkert/static-rewrite "Easily generate destination paths or static URLs by mapping user-friendly patterns to server-side build paths.")
 
 ### Contributing
 
