@@ -1,7 +1,7 @@
 {
   "name": "permalinks-date-helpers",
   "description": "Plugin for Permalinks that adds date helpers and variables to the context.",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "homepage": "https://github.com/permalinks/permalinks-date-helpers",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "permalinks/permalinks-date-helpers",
