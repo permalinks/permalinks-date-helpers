@@ -14,7 +14,7 @@
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "scripts": {
     "test": "mocha"
@@ -47,9 +47,9 @@
     ],
     "related": {
       "list": [
-        "static-rewrite",
         "gulp-permalinks",
-        "permalinks"
+        "permalinks",
+        "static-rewrite"
       ]
     },
     "lint": {
