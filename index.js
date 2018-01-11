@@ -1,12 +1,12 @@
 'use strict';
 
-var toRegexRange = require('to-regex-range');
-var year = require('year');
-var dateRegex;
+const toRegexRange = require('to-regex-range');
+const year = require('year');
+let dateRegex;
 
 module.exports = function(options) {
-  var opts = Object.assign({moment: require('moment')}, options);
-  var moment = opts.moment;
+  const opts = Object.assign({moment: require('moment')}, options);
+  const moment = opts.moment;
 
   return function(permalinks) {
 
@@ -15,7 +15,7 @@ module.exports = function(options) {
      */
 
     permalinks.context(function(file, context) {
-      var mod = file.data.date || (file.stat && file.stat.mtime) || new Date();
+      const mod = file.data.date || (file.stat && file.stat.mtime) || new Date();
 
       Object.defineProperty(context, '_date', {
         configurable: true,
@@ -62,7 +62,7 @@ module.exports = function(options) {
      */
 
     permalinks.helper('date', function(format, date) {
-      var mmt = this.context._date;
+      let mmt = this.context._date;
       if (isValidDate(format)) {
         mmt = moment(format);
         format = null;
@@ -83,9 +83,11 @@ function isValidDate(date, options) {
 }
 
 function toRange(options) {
-  var yearRegex = '(?:' + toRegexRange('1992', year()) + ')';
-  var monthRegex = '(?:0?' + toRegexRange('1', '12') + ')';
-  var dayRegex = '(?:0?' + toRegexRange('1', '12') + ')';
+  // "1989" is the year Tim Berners Lee invented the world wide web. It's unlikely
+  // that the year of a valid blog post date would be any earlier than that.
+  const yearRegex = '(?:' + toRegexRange('1989', year()) + ')';
+  const monthRegex = '(?:0?' + toRegexRange('1', '12') + ')';
+  const dayRegex = '(?:0?' + toRegexRange('1', '12') + ')';
   return [yearRegex, monthRegex, dayRegex].join('[-\\/ ]');
 }
 

@@ -20,15 +20,15 @@
     "test": "mocha"
   },
   "dependencies": {
-    "moment": "^2.17.1",
-    "to-regex-range": "^1.0.2",
+    "moment": "^2.20.1",
+    "to-regex-range": "^3.0.0",
     "year": "^0.2.1"
   },
   "devDependencies": {
-    "gulp-format-md": "^0.1.11",
-    "mocha": "^3.2.0",
-    "permalinks": "^1.0.3",
-    "vinyl": "^2.0.1"
+    "gulp-format-md": "^1.0.0",
+    "mocha": "^3.5.3",
+    "permalinks": "^2.0.0",
+    "vinyl": "^2.1.0"
   },
   "keywords": [
     "date",
